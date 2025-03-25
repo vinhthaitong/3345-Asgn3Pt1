@@ -19,9 +19,6 @@ public class sort{
             input.close();
             inOrderSort(InOrder);
             reverseOrderSort(ReverseOrder);
-            for(int i = 0; i < RandomOrder.length; i++){
-                System.out.println(RandomOrder[i] + " " + InOrder[i] + " " + ReverseOrder[i]);
-            }
         } catch (FileNotFoundException e){
             System.out.println("File not found");
         }
