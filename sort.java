@@ -1,6 +1,5 @@
 import java.util.*;
 import java.io.*;
-import java.time.*;
 
 public class sort{
     private static int comparisons = 0;
@@ -45,11 +44,13 @@ public class sort{
 
             int[] example = {2,5,1,3,4};
 
-            // RandomOrder sorting
-            // Create a copy of the RandomOrder array
-            System.out.println("Random Order list:");
-            int[] arrCopy = new int[RandomOrder.length];
+            /*-------------------------------------------------------- RANDOM ORDER LIST SORTING --------------------------------------------------------------*/
 
+            System.out.println("---------------------------------------------------------------------------------------------------");
+            System.out.println("Random Order list:");
+
+            int[] arrCopy = new int[RandomOrder.length];
+            // Create String and int variables to store the results
             String compareResult;
             int compareMin = 0;
             String timeResult;
@@ -57,7 +58,7 @@ public class sort{
             String moveResult;
             int moveMin;
 
-            // Insertion Sort
+            // Implementing Insertion Sort
             System.out.println("\tInsertion Sort:");
             arrayCopy(RandomOrder, arrCopy);
             long start = System.currentTimeMillis();
@@ -77,14 +78,14 @@ public class sort{
             moveResult = "Insertion Sort";
             compareResult = "Insertion Sort";
 
-            // Selection Sort
+            // Implementing Selection Sort
             System.out.println("\tSelection Sort:");
             arrayCopy(RandomOrder, arrCopy);
-            long startSelection = System.currentTimeMillis();
+            start = System.currentTimeMillis();
             selectionSort(arrCopy);
-            long endSelection = System.currentTimeMillis();
-            long durationSelection = endSelection - startSelection;
-            System.out.println("\t\tTime taken for Selection Sort: " + durationSelection + " milliseconds");
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Selection Sort: " + duration + " milliseconds");
             int selectionSortComparisons = getComparisons();
             int selectionSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Selection Sort: " + selectionSortComparisons);
@@ -94,8 +95,8 @@ public class sort{
                 compareMin = selectionSortComparisons;
                 compareResult = "Selection Sort";
             }
-            if (durationSelection < timeMin) {
-                timeMin = (int) durationSelection;
+            if (duration < timeMin) {
+                timeMin = (int) duration;
                 timeResult = "Selection Sort";
             }
             if (selectionSortMovements < moveMin) {
@@ -103,14 +104,14 @@ public class sort{
                 moveResult = "Selection Sort";
             }
 
-            // Quick Sort
+            // Implementing Quick Sort
             System.out.println("\tQuick Sort:");
             arrayCopy(RandomOrder, arrCopy);
-            long startQuick = System.currentTimeMillis();
+            start = System.currentTimeMillis();
             quicksort(arrCopy, 0, arrCopy.length - 1);
-            long endQuick = System.currentTimeMillis();
-            long durationQuick = endQuick - startQuick;
-            System.out.println("\t\tTime taken for Quick Sort: " + durationQuick + " milliseconds");
+             end = System.currentTimeMillis();
+             duration = end - start;
+            System.out.println("\t\tTime taken for Quick Sort: " + duration + " milliseconds");
             int quickSortComparisons = getComparisons();
             int quickSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Quick Sort: " + quickSortComparisons);
@@ -120,8 +121,8 @@ public class sort{
                 compareMin = quickSortComparisons;
                 compareResult = "Quick Sort";
             }
-            if (durationQuick < timeMin) {
-                timeMin = (int) durationQuick;
+            if (duration < timeMin) {
+                timeMin = (int) duration;
                 timeResult = "Quick Sort";
             }
             if (quickSortMovements < moveMin) {
@@ -129,14 +130,14 @@ public class sort{
                 moveResult = "Quick Sort";
             }
 
-            // Merge Sort
+            // Implementing Merge Sort
             System.out.println("\tMerge Sort:");
             arrayCopy(RandomOrder, arrCopy);
-            long startMerge = System.currentTimeMillis();
+            start = System.currentTimeMillis();
             mergeSort(arrCopy, 0, arrCopy.length - 1);
-            long endMerge = System.currentTimeMillis();
-            long durationMerge = endMerge - startMerge;
-            System.out.println("\t\tTime taken for Merge Sort: " + durationMerge + " milliseconds");
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Merge Sort: " + duration + " milliseconds");
             int mergeSortComparisons = getComparisons();
             int mergeSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Merge Sort: " + mergeSortComparisons);
@@ -146,8 +147,226 @@ public class sort{
                 compareMin = mergeSortComparisons;
                 compareResult = "Merge Sort";
             }
-            if (durationMerge < timeMin) {
-                timeMin = (int) durationMerge;
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Merge Sort";
+            }
+            if (mergeSortMovements < moveMin) {
+                moveMin = mergeSortMovements;
+                moveResult = "Merge Sort";
+            }
+
+            // Conclusions
+            System.out.println("Conclusions:");
+            System.out.println("\tThe sorting algorithm with the least amount of time taken is " + timeResult + " with " + timeMin + " milliseconds.");
+            System.out.println("\tThe sorting algorithm with the least amount of comparisons is " + compareResult + " with " + compareMin + " comparisons.");
+            System.out.println("\tThe sorting algorithm with the least amount of movements is " + moveResult + " with " + moveMin + " movements.");
+
+            /*-------------------------------------------------------- IN ORDER LIST SORTING --------------------------------------------------------------*/
+            
+            System.out.println("---------------------------------------------------------------------------------------------------");
+            System.out.println("\nIn Order list:");
+
+            // Implementing Insertion Sort
+            System.out.println("\tInsertion Sort:");
+            arrayCopy(InOrder, arrCopy);
+            start = System.currentTimeMillis();
+            insertionSort(arrCopy);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Insertion Sort: " + duration + " milliseconds");
+            insertionSortComparisons = getComparisons();
+            insertionSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Insertion Sort: " + insertionSortComparisons);
+            System.out.println("\t\tNumber of movements for Insertion Sort: " + insertionSortMovements);
+            reset();
+            compareMin = insertionSortComparisons;
+            timeMin = (int) duration;
+            moveMin = insertionSortMovements;
+            timeResult = "Insertion Sort";
+            moveResult = "Insertion Sort";
+            compareResult = "Insertion Sort";
+
+            // Implementing Selection Sort
+            System.out.println("\tSelection Sort:");
+            arrayCopy(InOrder, arrCopy);
+            start = System.currentTimeMillis();
+            selectionSort(arrCopy);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Selection Sort: " + duration + " milliseconds");
+            selectionSortComparisons = getComparisons();
+            selectionSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Selection Sort: " + selectionSortComparisons);
+            System.out.println("\t\tNumber of movements for Selection Sort: " + selectionSortMovements);
+            reset();
+            if (selectionSortComparisons < compareMin) {
+                compareMin = selectionSortComparisons;
+                compareResult = "Selection Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Selection Sort";
+            }
+            if (selectionSortMovements < moveMin) {
+                moveMin = selectionSortMovements;
+                moveResult = "Selection Sort";
+            }
+
+            //Implementing Quick Sort
+            System.out.println("\tQuick Sort:");
+            arrayCopy(InOrder, arrCopy);
+            start = System.currentTimeMillis();
+            quicksort(arrCopy, 0, arrCopy.length - 1);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Quick Sort: " + duration + " milliseconds");
+            quickSortComparisons = getComparisons();
+            quickSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Quick Sort: " + quickSortComparisons);
+            System.out.println("\t\tNumber of movements for Quick Sort: " + quickSortMovements);
+            reset();
+            if (quickSortComparisons < compareMin) {
+                compareMin = quickSortComparisons;
+                compareResult = "Quick Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Quick Sort";
+            }
+            if (quickSortMovements < moveMin) {
+                moveMin = quickSortMovements;
+                moveResult = "Quick Sort";
+            }
+
+            // Implementing Merge Sort
+            System.out.println("\tMerge Sort:");
+            arrayCopy(InOrder, arrCopy);
+            start = System.currentTimeMillis();
+            mergeSort(arrCopy, 0, arrCopy.length - 1);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Merge Sort: " + duration + " milliseconds");
+            mergeSortComparisons = getComparisons();
+            mergeSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Merge Sort: " + mergeSortComparisons);
+            System.out.println("\t\tNumber of movements for Merge Sort: " + mergeSortMovements);
+            reset();
+            if (mergeSortComparisons < compareMin) {
+                compareMin = mergeSortComparisons;
+                compareResult = "Merge Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Merge Sort";
+            }
+            if (mergeSortMovements < moveMin) {
+                moveMin = mergeSortMovements;
+                moveResult = "Merge Sort";
+            }
+
+            // Conclusions
+            System.out.println("Conclusions:");
+            System.out.println("\tThe sorting algorithm with the least amount of time taken is " + timeResult + " with " + timeMin + " milliseconds.");
+            System.out.println("\tThe sorting algorithm with the least amount of comparisons is " + compareResult + " with " + compareMin + " comparisons.");
+            System.out.println("\tThe sorting algorithm with the least amount of movements is " + moveResult + " with " + moveMin + " movements.");
+
+            /*-------------------------------------------------------- REVERSE ORDER LIST SORTING --------------------------------------------------------------*/
+            
+            System.out.println("---------------------------------------------------------------------------------------------------");
+            System.out.println("Reverse Order list:");
+
+            // Implementing Insertion Sort
+            System.out.println("\tInsertion Sort:");
+            arrayCopy(ReverseOrder, arrCopy);
+            start = System.currentTimeMillis();
+            insertionSort(arrCopy);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Insertion Sort: " + duration + " milliseconds");
+            insertionSortComparisons = getComparisons();
+            insertionSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Insertion Sort: " + insertionSortComparisons);
+            System.out.println("\t\tNumber of movements for Insertion Sort: " + insertionSortMovements);
+            reset();
+            compareMin = insertionSortComparisons;
+            timeMin = (int) duration;
+            moveMin = insertionSortMovements;
+            timeResult = "Insertion Sort";
+            moveResult = "Insertion Sort";
+            compareResult = "Insertion Sort";
+
+            // Implementing Selection Sort
+            System.out.println("\tSelection Sort:");
+            arrayCopy(ReverseOrder, arrCopy);
+            start = System.currentTimeMillis();
+            selectionSort(arrCopy);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Selection Sort: " + duration + " milliseconds");
+            selectionSortComparisons = getComparisons();
+            selectionSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Selection Sort: " + selectionSortComparisons);
+            System.out.println("\t\tNumber of movements for Selection Sort: " + selectionSortMovements);
+            reset();
+            if (selectionSortComparisons < compareMin) {
+                compareMin = selectionSortComparisons;
+                compareResult = "Selection Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Selection Sort";
+            }
+            if (selectionSortMovements < moveMin) {
+                moveMin = selectionSortMovements;
+                moveResult = "Selection Sort";
+            }
+
+            //Implementing Quick Sort
+            System.out.println("\tQuick Sort:");
+            arrayCopy(ReverseOrder, arrCopy);
+            start = System.currentTimeMillis();
+            quicksort(arrCopy, 0, arrCopy.length - 1);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Quick Sort: " + duration + " milliseconds");
+            quickSortComparisons = getComparisons();
+            quickSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Quick Sort: " + quickSortComparisons);
+            System.out.println("\t\tNumber of movements for Quick Sort: " + quickSortMovements);
+            reset();
+            if (quickSortComparisons < compareMin) {
+                compareMin = quickSortComparisons;
+                compareResult = "Quick Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
+                timeResult = "Quick Sort";
+            }
+            if (quickSortMovements < moveMin) {
+                moveMin = quickSortMovements;
+                moveResult = "Quick Sort";
+            }
+
+            // Implementing Merge Sort
+            System.out.println("\tMerge Sort:");
+            arrayCopy(ReverseOrder, arrCopy);
+            start = System.currentTimeMillis();
+            mergeSort(arrCopy, 0, arrCopy.length - 1);
+            end = System.currentTimeMillis();
+            duration = end - start;
+            System.out.println("\t\tTime taken for Merge Sort: " + duration + " milliseconds");
+            mergeSortComparisons = getComparisons();
+            mergeSortMovements = getMovements();
+            System.out.println("\t\tNumber of comparisons for Merge Sort: " + mergeSortComparisons);
+            System.out.println("\t\tNumber of movements for Merge Sort: " + mergeSortMovements);
+            reset();
+            if (mergeSortComparisons < compareMin) {
+                compareMin = mergeSortComparisons;
+                compareResult = "Merge Sort";
+            }
+            if (duration < timeMin) {
+                timeMin = (int) duration;
                 timeResult = "Merge Sort";
             }
             if (mergeSortMovements < moveMin) {
@@ -166,6 +385,8 @@ public class sort{
             System.out.println("File not found");
         }
     }
+
+    /*-------------------------------------------------------- SORT THE ARRAY FOR TESTING --------------------------------------------------------------*/
 
     public static void inOrderSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -189,6 +410,8 @@ public class sort{
             arr[j + 1] = key;
         }
     }
+
+    /*-------------------------------------------------------- SORTING ALGORITHMS --------------------------------------------------------------*/
 
     //Insertion sort
     public static void insertionSort(int[] arr) {
