@@ -165,7 +165,7 @@ public class sort{
             /*-------------------------------------------------------- IN ORDER LIST SORTING --------------------------------------------------------------*/
             
             System.out.println("---------------------------------------------------------------------------------------------------");
-            System.out.println("\nIn Order list:");
+            System.out.println("In Order list:");
 
             // Implementing Insertion Sort
             System.out.println("\tInsertion Sort:");
