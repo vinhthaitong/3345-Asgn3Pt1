@@ -61,6 +61,8 @@ public class sort{
             int timeMin;
             String moveResult;
             int moveMin;
+            int finalCompareMin = 0;
+            String finalResult;
 
             // Implementing Insertion Sort
             System.out.println("\tInsertion Sort:");
@@ -87,6 +89,8 @@ public class sort{
             timeResult = "Insertion Sort";
             moveResult = "Insertion Sort";
             compareResult = "Insertion Sort";
+            finalCompareMin = compareMin + moveMin;
+            finalResult = "Insertion Sort";
 
             // Implementing Selection Sort
             System.out.println("\tSelection Sort:");
@@ -112,6 +116,10 @@ public class sort{
             if (selectionSortMovements < moveMin) {
                 moveMin = selectionSortMovements;
                 moveResult = "Selection Sort";
+            }
+            if (selectionSortComparisons + selectionSortMovements < finalCompareMin) {
+                finalCompareMin = selectionSortComparisons + selectionSortMovements;
+                finalResult = "Selection Sort";
             }
 
             // Implementing Quick Sort
@@ -139,6 +147,10 @@ public class sort{
                 moveMin = quickSortMovements;
                 moveResult = "Quick Sort";
             }
+            if (quickSortComparisons + quickSortMovements < finalCompareMin) {
+                finalCompareMin = quickSortComparisons + quickSortMovements;
+                finalResult = "Quick Sort";
+            }
 
             // Implementing Merge Sort
             System.out.println("\tMerge Sort:");
@@ -165,12 +177,17 @@ public class sort{
                 moveMin = mergeSortMovements;
                 moveResult = "Merge Sort";
             }
+            if (mergeSortComparisons + mergeSortMovements < finalCompareMin) {
+                finalCompareMin = mergeSortComparisons + mergeSortMovements;
+                finalResult = "Merge Sort";
+            }
 
             // Conclusions
             System.out.println("Conclusions:");
             System.out.println("\tThe sorting algorithm with the least amount of time taken is " + timeResult + " with " + timeMin + " milliseconds.");
             System.out.println("\tThe sorting algorithm with the least amount of comparisons is " + compareResult + " with " + compareMin + " comparisons.");
             System.out.println("\tThe sorting algorithm with the least amount of movements is " + moveResult + " with " + moveMin + " movements.");
+            System.out.println("\tThe best sorting algorithms for Random Order List is " + finalResult + " with " + finalCompareMin + " comparisons and movements combined.");
 
             /*-------------------------------------------------------- IN ORDER LIST SORTING --------------------------------------------------------------*/
             
@@ -196,6 +213,8 @@ public class sort{
             timeResult = "Insertion Sort";
             moveResult = "Insertion Sort";
             compareResult = "Insertion Sort";
+            finalCompareMin = compareMin + moveMin;
+            finalResult = "Insertion Sort";
 
             // Implementing Selection Sort
             System.out.println("\tSelection Sort:");
@@ -221,6 +240,10 @@ public class sort{
             if (selectionSortMovements < moveMin) {
                 moveMin = selectionSortMovements;
                 moveResult = "Selection Sort";
+            }
+            if (selectionSortComparisons + selectionSortMovements < finalCompareMin) {
+                finalCompareMin = selectionSortComparisons + selectionSortMovements;
+                finalResult = "Selection Sort";
             }
 
             //Implementing Quick Sort
@@ -248,6 +271,10 @@ public class sort{
                 moveMin = quickSortMovements;
                 moveResult = "Quick Sort";
             }
+            if (quickSortComparisons + quickSortMovements < finalCompareMin) {
+                finalCompareMin = quickSortComparisons + quickSortMovements;
+                finalResult = "Quick Sort";
+            }
 
             // Implementing Merge Sort
             System.out.println("\tMerge Sort:");
@@ -274,12 +301,17 @@ public class sort{
                 moveMin = mergeSortMovements;
                 moveResult = "Merge Sort";
             }
+            if (mergeSortComparisons + mergeSortMovements < finalCompareMin) {
+                finalCompareMin = mergeSortComparisons + mergeSortMovements;
+                finalResult = "Merge Sort";
+            }
 
             // Conclusions
             System.out.println("Conclusions:");
             System.out.println("\tThe sorting algorithm with the least amount of time taken is " + timeResult + " with " + timeMin + " milliseconds.");
             System.out.println("\tThe sorting algorithm with the least amount of comparisons is " + compareResult + " with " + compareMin + " comparisons.");
             System.out.println("\tThe sorting algorithm with the least amount of movements is " + moveResult + " with " + moveMin + " movements.");
+            System.out.println("\tThe best sorting algorithms for In Order List is " + finalResult + " with " + finalCompareMin + " comparisons and movements combined.");
 
             /*-------------------------------------------------------- REVERSE ORDER LIST SORTING --------------------------------------------------------------*/
             
@@ -305,6 +337,8 @@ public class sort{
             timeResult = "Insertion Sort";
             moveResult = "Insertion Sort";
             compareResult = "Insertion Sort";
+            finalCompareMin = compareMin + moveMin;
+            finalResult = "Insertion Sort";
 
             // Implementing Selection Sort
             System.out.println("\tSelection Sort:");
@@ -330,6 +364,10 @@ public class sort{
             if (selectionSortMovements < moveMin) {
                 moveMin = selectionSortMovements;
                 moveResult = "Selection Sort";
+            }
+            if (selectionSortComparisons + selectionSortMovements < finalCompareMin) {
+                finalCompareMin = selectionSortComparisons + selectionSortMovements;
+                finalResult = "Selection Sort";
             }
 
             //Implementing Quick Sort
@@ -357,6 +395,10 @@ public class sort{
                 moveMin = quickSortMovements;
                 moveResult = "Quick Sort";
             }
+            if (quickSortComparisons + quickSortMovements < finalCompareMin) {
+                finalCompareMin = quickSortComparisons + quickSortMovements;
+                finalResult = "Quick Sort";
+            }
 
             // Implementing Merge Sort
             System.out.println("\tMerge Sort:");
@@ -383,12 +425,17 @@ public class sort{
                 moveMin = mergeSortMovements;
                 moveResult = "Merge Sort";
             }
+            if (mergeSortComparisons + mergeSortMovements < finalCompareMin) {
+                finalCompareMin = mergeSortComparisons + mergeSortMovements;
+                finalResult = "Merge Sort";
+            }
 
             // Conclusions
             System.out.println("Conclusions:");
             System.out.println("\tThe sorting algorithm with the least amount of time taken is " + timeResult + " with " + timeMin + " milliseconds.");
             System.out.println("\tThe sorting algorithm with the least amount of comparisons is " + compareResult + " with " + compareMin + " comparisons.");
             System.out.println("\tThe sorting algorithm with the least amount of movements is " + moveResult + " with " + moveMin + " movements.");
+            System.out.println("\tThe best sorting algorithms for Reverse Order List is " + finalResult + " with " + finalCompareMin + " comparisons and movements combined.");
 
 
         } catch (FileNotFoundException e){
