@@ -6,14 +6,14 @@ import java.util.*;
 import java.io.*;
 
 public class sort{
-    private static int comparisons = 0;
-    private static int movements = 0;
+    private static long comparisons = 0;
+    private static long movements = 0;
 
-    public static int getComparisons() {
+    public static long getComparisons() {
         return comparisons;
     }
 
-    public static int getMovements() {
+    public static long getMovements() {
         return movements;
     }
 
@@ -56,12 +56,12 @@ public class sort{
             int[] arrCopy = new int[RandomOrder.length];
             // Create String and int variables to store the results
             String compareResult;
-            int compareMin = 0;
+            long compareMin = 0;
             String timeResult;
             int timeMin;
             String moveResult;
-            int moveMin;
-            int finalCompareMin = 0;
+            long moveMin;
+            long finalCompareMin = 0;
             String finalResult;
 
             // Implementing Insertion Sort
@@ -76,8 +76,8 @@ public class sort{
             long duration = end - start;
             // Print the duration, comparisons, and movements
             System.out.println("\t\tTime taken for Insertion Sort: " + duration + " milliseconds");
-            int insertionSortComparisons = getComparisons();
-            int insertionSortMovements = getMovements();
+            long insertionSortComparisons = getComparisons();
+            long insertionSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Insertion Sort: " + insertionSortComparisons);
             System.out.println("\t\tNumber of movements for Insertion Sort: " + insertionSortMovements);
             // Reset the comparisons and movements
@@ -100,8 +100,8 @@ public class sort{
             end = System.currentTimeMillis();
             duration = end - start;
             System.out.println("\t\tTime taken for Selection Sort: " + duration + " milliseconds");
-            int selectionSortComparisons = getComparisons();
-            int selectionSortMovements = getMovements();
+            long selectionSortComparisons = getComparisons();
+            long selectionSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Selection Sort: " + selectionSortComparisons);
             System.out.println("\t\tNumber of movements for Selection Sort: " + selectionSortMovements);
             reset();
@@ -130,8 +130,8 @@ public class sort{
              end = System.currentTimeMillis();
              duration = end - start;
             System.out.println("\t\tTime taken for Quick Sort: " + duration + " milliseconds");
-            int quickSortComparisons = getComparisons();
-            int quickSortMovements = getMovements();
+            long quickSortComparisons = getComparisons();
+            long quickSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Quick Sort: " + quickSortComparisons);
             System.out.println("\t\tNumber of movements for Quick Sort: " + quickSortMovements);
             reset();
@@ -160,8 +160,8 @@ public class sort{
             end = System.currentTimeMillis();
             duration = end - start;
             System.out.println("\t\tTime taken for Merge Sort: " + duration + " milliseconds");
-            int mergeSortComparisons = getComparisons();
-            int mergeSortMovements = getMovements();
+            long mergeSortComparisons = getComparisons();
+            long mergeSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Merge Sort: " + mergeSortComparisons);
             System.out.println("\t\tNumber of movements for Merge Sort: " + mergeSortMovements);
             reset();
