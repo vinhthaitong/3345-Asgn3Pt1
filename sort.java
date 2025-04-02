@@ -1,3 +1,7 @@
+// Since the data is too large, the program will return stack overflow error
+// To be able to run this program, command "java -Xss4m sort" in the terminal 
+// This modigies the max size of the memory to 4MB instead of 1MB like usual
+
 import java.util.*;
 import java.io.*;
 
@@ -61,16 +65,22 @@ public class sort{
             // Implementing Insertion Sort
             System.out.println("\tInsertion Sort:");
             arrayCopy(RandomOrder, arrCopy);
+            // Start the timer
             long start = System.currentTimeMillis();
             insertionSort(arrCopy);
             long end = System.currentTimeMillis();
+            // Stop the timer
+            // Calculate the duration
             long duration = end - start;
+            // Print the duration, comparisons, and movements
             System.out.println("\t\tTime taken for Insertion Sort: " + duration + " milliseconds");
             int insertionSortComparisons = getComparisons();
             int insertionSortMovements = getMovements();
             System.out.println("\t\tNumber of comparisons for Insertion Sort: " + insertionSortComparisons);
             System.out.println("\t\tNumber of movements for Insertion Sort: " + insertionSortMovements);
+            // Reset the comparisons and movements
             reset();
+            // Store the results for comparison
             compareMin = insertionSortComparisons;
             timeMin = (int) duration;
             moveMin = insertionSortMovements;
